@@ -1,1 +1,2 @@
-# react-ssr-simple-demo
+# simple
+react-ssr-simple-demo
