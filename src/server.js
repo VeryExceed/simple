@@ -1,10 +1,14 @@
-const express =require('express')
-const app = express()
+require("@babel/register")({
+  presets: ["@babel/preset-env", "@babel/preset-react"],
+});
 
-app.get('/',function (req,res) {
-	res.send('Hello World!')
-})
+const express = require("express");
+const app = express();
+const serverRouter = require("./serverRouter");
 
-app.listen(3000,function(){
-	console.log('Example app listening on port 3000!')
-})
+app.use("/", serverRouter);
+app.use(express.static("build"));
+
+app.listen(3000, function () {
+  console.log("Example app listening on port 3000!");
+});
