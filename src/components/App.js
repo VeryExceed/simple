@@ -1,9 +1,6 @@
 import React from "react";
 import { Route, Switch, NavLink } from "react-router-dom";
 import routes from "../core/routes";
-import Home from "../components/Home";
-import User from "../components/User";
-import NotFound from "../components/NotFound";
 
 const App = () => {
   return (
@@ -18,10 +15,9 @@ const App = () => {
       </ul>
 
       <Switch>
-        {/* 精确匹配路径*/}
-        <Route exact path="/" component={Home} />
-        <Route path="/user" component={User} />
-        <Route component={NotFound} />
+        {routes.map((route) => (
+          <Route key={route.path} exact={route.path === "/"} {...route} />
+        ))}
       </Switch>
     </div>
   );
