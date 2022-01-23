@@ -7,7 +7,7 @@ module.exports = {
     path: path.resolve(__dirname, "build"),
     filename: "main.js",
   },
-	mode: 'development',
+  mode: "development",
   module: {
     rules: [
       {
@@ -17,9 +17,9 @@ module.exports = {
       },
     ],
   },
-  // plugins: [
-  //   new CopyPlugin({
-  //     patterns: [{ from: "public/index.html" }],
-  //   }),
-  // ],
+  plugins: [
+    new CopyPlugin({
+      patterns: [{ from: "public/index.html" }],
+    }),
+  ],
 };

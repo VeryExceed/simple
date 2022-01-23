@@ -4,13 +4,12 @@ require("@babel/register")({
 
 const express = require("express");
 const app = express();
-const serverRouter = require("./server/appRouter");
-const apiRouter = require('./server/apiRouter')
+const appRouter = require("./server/appRouter");
+const apiRouter = require("./server/apiRouter");
 
 app.use("/api/", apiRouter);
-app.use("/build",express.static("build"));
-app.use("/", serverRouter);
-
+app.use("/build", express.static("build"));
+app.use("/", appRouter);
 
 app.listen(3000, function () {
   console.log("Example app listening on port 3000!");

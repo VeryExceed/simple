@@ -1,13 +1,13 @@
-const express = require('express')
+const express = require("express");
 
-const router = express.Router()
+const router = express.Router();
 
-router.get('/home',function (req,res,next) {
-	res.json({title:'Home',desc:'Welcome to react-ssr-demo'})
-})
+router.get("/home", function (req, res, next) {
+  res.json({ title: "Home", desc: "Welcome to react-ssr-demo" });
+});
 
-router.get('/user',function (req,res,next) {
-	res.json({ name: 'RewLuo', age: '24', id: '001' })
-})
+router.get("/user", function (req, res, next) {
+  res.json({ name: "RewLuo", age: "24", id: "001" });
+});
 
-module.exports = router
+module.exports = router;
